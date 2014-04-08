@@ -10,6 +10,10 @@ function createQuadtreeLabeler(prefix) {
     return theLabel;
   }
 
+  function setLabelOnNode(node, x1, y1, x2, y2) {
+    node.label = label(node, x1, y1, x2, y2);
+  }
+
   function elementIdForLabel(label) {
     return prefix + label;
   }
@@ -29,6 +33,7 @@ function createQuadtreeLabeler(prefix) {
 
   return {
     label: label,
+    setLabelOnNode: setLabelOnNode,
     elementIdForLabel: elementIdForLabel,
     elementIdForNode: elementIdForNode,
     labelFromEl: labelFromEl,

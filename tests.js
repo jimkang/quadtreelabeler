@@ -73,7 +73,12 @@ var elements = {
 
   var pointBLabel = labeler.label(visits.pointB.node, 
     visits.pointB.x1, visits.pointB.y1, visits.pointB.x2, visits.pointB.y2);
-  assert.equal(pointBLabel, 'point_11_10');  
+  assert.equal(pointBLabel, 'point_11_10');
+
+  labeler.setLabelOnNode(visits.quadB.node, 
+    visits.quadB.x1, visits.quadB.y1, visits.quadB.x2, visits.quadB.y2);
+  assert.equal(visits.quadB.node.label, 'quad_12_4');
+
 })());
 
 ((function idSuite() {
@@ -81,9 +86,6 @@ var elements = {
 
   var id = labeler.elementIdForLabel('cat');
   assert.equal(id, 'bonus-cat');
-
-  visits.quadB.node.label = labeler.label(visits.quadB.node, 
-    visits.quadB.x1, visits.quadB.y1, visits.quadB.x2, visits.quadB.y2);
 
   var quadBId = labeler.elementIdForNode(visits.quadB.node);
   assert.equal(quadBId, 'bonus-' + visits.quadB.node.label);
