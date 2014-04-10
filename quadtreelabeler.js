@@ -7,7 +7,7 @@ function createQuadtreeLabeler(prefix) {
     else {
       theLabel = ('quad-' + (x1 + x2)/2 + '-' + (y1 + y2)/2);
     }
-    theLabel = theLabel.replace('.', '_')
+    theLabel = theLabel.replace(/\./g, '_');
     return theLabel;
   }
 

@@ -26,7 +26,7 @@ var visits = {
   pointA: {
     node: {
       leaf: true,
-      point: [5, 5.5]
+      point: [5.7, 5.5]
     },
     x1: 4,
     y1: 4,
@@ -69,7 +69,7 @@ var elements = {
 
   var pointALabel = labeler.label(visits.pointA.node, 
     visits.pointA.x1, visits.pointA.y1, visits.pointA.x2, visits.pointA.y2);
-  assert.equal(pointALabel, 'point-5-5_5');
+  assert.equal(pointALabel, 'point-5_7-5_5');
 
   var pointBLabel = labeler.label(visits.pointB.node, 
     visits.pointB.x1, visits.pointB.y1, visits.pointB.x2, visits.pointB.y2);
